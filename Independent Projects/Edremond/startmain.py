@@ -2,8 +2,7 @@ import random
 from random import randint
 import time
 import sys
-global Player_Name
-global Player_Inventory
+from player import Player
 #  Monster_Health = 35 minus something from a variable
 #  Monster_Health = (Monster_Health) - 1
 def death():
@@ -55,7 +54,27 @@ def Edremond():
     if randomapples_starter1 == 1:
       print ("You stand up shakily and turn around to see that only one lone, red Apple hangs on a branch. You pick it and put it in your mouth. It tastes good. You soon sit back down and fall asleep as the Apple digests.")
       Edremond() 
-def start():
+
+
+
+class Main:
+  def __init__(self):
+    pass
+
+def menu(self):
+  print ("Welcome to Edremond")
+  time.sleep(1.25)
+  print ("You can either start a [new game] or see the [credits]." )
+  time.sleep(.8)
+  Main_Menu1 = input("What would you like to do?" )
+  if Main_Menu1 == 'new game':
+    self.start()
+  if Main_Menu1 == 'credits':
+    self.credits()
+  else:
+    print ("Please input a valid option.")
+
+def start(self):
   Player_Name = input("What is your name?" ) #Player_Name variable
   Player_Inventory = (None)
   print ("Welcome to Edremond, %s." %  Player_Name) #Intro
@@ -67,23 +86,14 @@ def start():
   print ("Well, lets get started!")
   time.sleep(1.25)
   Edremond()
-def mainmenu():
-  print ("Welcome to Edremond")
-  time.sleep(1.25)
-  print ("You can either start a [new game] or see the [credits]." )
-  time.sleep(.8)
-  Main_Menu1 = input("What would you like to do?" )
-  if Main_Menu1 == 'new game':
-    start()
-  if Main_Menu1 == 'credits':
-    credits()
-  
-def credits():
+
+def credits(self):
   print ("EDREMOND")
   time.sleep(1.5)
   print ("Made by Dylan Walker")
   time.sleep(1.5)
-  print ("Made in July 2017")
+  print ("Development from July 2017 to present")
   time.sleep(1.5)
-  mainmenu()
-mainmenu()
+  self.menu()
+
+Main.menu()
